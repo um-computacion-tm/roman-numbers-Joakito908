@@ -3,8 +3,12 @@ import unittest
 def decimal_to_roman(decimal):
     if decimal <= 3:
         return 'I' * decimal
+    elif decimal == 4:
+        return "IV"
     elif decimal == 5:
         return 'V'
+    elif decimal <= 8:
+        return 'V' * decimal
     elif decimal == 10:
         return 'X'
     elif decimal == 50:
@@ -40,6 +44,9 @@ class TestDecimalToRoman(unittest.TestCase):
     def test_tres(self):
         resultado = decimal_to_roman(3)
         self.assertEqual(resultado, 'III')
+    def test_tres(self):
+        resultado = decimal_to_roman(4)
+        self.assertEqual(resultado, 'IV')
 
     def test_cincuenta(self):
         resultado= decimal_to_roman(50)
